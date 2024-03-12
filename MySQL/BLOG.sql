@@ -182,7 +182,7 @@ AS (
 
         CASE
             WHEN COUNT(PC.ID_POST) <= 0 THEN 'Has no comments'
-            ELSE CAST(COUNT(PC.ID_POST) AS NCHAR )
+            ELSE CAST(COUNT(PC.ID_POST) AS NCHAR)
         END AS "Total comments in this post",
 
         CASE
