@@ -132,12 +132,16 @@ INSERT INTO POST_LIKE(ID_POST, ID_USER)
 VALUE
     (100, 100);
 
+-- Raw selects to view all data
+
 SELECT BU.* FROM BLOG_USER BU;
 SELECT PL.* FROM POST_LIKE PL;
+SELECT PC.* FROM POST_COMMENT PC;
 
 -- View the amount of like a post has
 
-SELECT P.ID_POST, P.POST_NAME, COUNT(PL.ID_POST) AS "Post likes"
+SELECT
+    P.ID_POST AS "Post ID", P.POST_NAME AS "Post title", COUNT(PL.ID_POST) AS "Post likes"
 FROM POST P
 LEFT JOIN POST_LIKE PL on P.ID_POST = PL.ID_POST
 GROUP BY P.ID_POST;
@@ -145,7 +149,7 @@ GROUP BY P.ID_POST;
 -- View the amount of likes the user has giving in post
 
 SELECT
-    BU.ID_USER, BU.NICKNAME, COUNT(PL.ID_USER) AS "Like in posts"
+    BU.ID_USER AS "User ID", BU.NICKNAME AS "Username", COUNT(PL.ID_USER) AS "Like in posts"
 FROM BLOG_USER BU
 LEFT JOIN POST_LIKE PL on BU.ID_USER = PL.ID_USER
 GROUP BY BU.ID_USER;
