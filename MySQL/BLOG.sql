@@ -211,9 +211,9 @@ SELECT PIV.* FROM POSTS_INFORMATION_VIEW PIV;
 -- Example of how the information will be displayed.
 
 -- Post ID, Post Tile, Post content, User ID, User name, Posted On, Commented by, Comment Body, Comment made on, Total Comments in this post, likes
--- 101, First post., "Hello everyone, salsa y picante.", 100, Paulito123,"March 11, 2024", Paulito123, I know,"March 11, 2024",2, 2
--- 101, First post., "Hello everyone, salsa y picante.", 100, Paulito123,"March 11, 2024", Juanito, Your post sucks,"March 11, 2024",2 , 2
--- 100, Second post., "Hello everyone, salsa y picante.", 101, Juanito,"March 11, 2024", Not commented yet, Not commented yet, "March 11, 2024", Has no comments, Has no likes
+-- 101, First post., "Hello everyone, salsa y picante.", 100, Paulito123, "March 11, 2024", Paulito123, "I know", "March 11, 2024", 2, 2
+-- 101, First post., "Hello everyone, salsa y picante.", 100, Paulito123, "March 11, 2024", Juanito, "Your post sucks", "March 11, 2024", 2 , 2
+-- 100, Second post., "Hello everyone, salsa y picante.", 101, Juanito, "March 11, 2024", "Not commented yet", "Not commented yet", "March 11, 2024", "Has no comments", "Has no likes"
 
 
 
