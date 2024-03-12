@@ -113,10 +113,10 @@ VALUES
 
 INSERT INTO POST(ID_USER, POST_NAME, POST_BODY)
 VALUES
-	(100, "First post", "Hello everyone, salsa y picante");
+	(100, 'First post', 'Hello everyone, salsa y picante');
 INSERT INTO POST(ID_USER, POST_NAME, POST_BODY)
 VALUES
-	(101, "Second post", "Hello everyone, salsa y picante");
+	(101, 'Second post', 'Hello everyone, salsa y picante');
 
 INSERT INTO POST_COMMENT(ID_POST, ID_USER, COMMENT_TEXT)
 VALUES
@@ -177,16 +177,14 @@ AS (
         P.ID_USER AS "User ID",
         BU.NICKNAME AS "User name",
 
-        MONTHNAME(P.POST_DATE) AS "Post date Month",
-        DAYNAME(P.POST_DATE) AS "Post date Day",
-        YEAR(P.POST_DATE) AS "Post date Year",
+        CONCAT(MONTHNAME(P.POST_DATE), ' ', DAYOFMONTH(P.POST_DATE), ', ', YEAR(P.POST_DATE)) AS "Posted on",
 
         IFNULL((SELECT BU.NICKNAME
                 FROM BLOG_USER BU
                 WHERE BU.ID_USER = PC.ID_USER), 'Not commented yet') AS "Commented by",
 
         IFNULL(PC.COMMENT_TEXT, 'Not commented yet') AS "Comment body",
-        IFNULL(DATE(PC.COMMENT_DATE), 'Not commented yet') AS "Comment made on date",
+        IFNULL(CONCAT(MONTHNAME(P.POST_DATE), ' ', DAYOFMONTH(P.POST_DATE), ', ', YEAR(P.POST_DATE)), 'Not commented yet') AS "Comment made on",
 
         CASE
             WHEN COUNT(PC.ID_POST) <= 0 THEN 'Has no comments'
