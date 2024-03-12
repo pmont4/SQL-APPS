@@ -167,8 +167,13 @@ CREATE VIEW POSTS_INFORMATION_VIEW
 AS (
     SELECT
         P.ID_POST AS "Post ID",
-        P.POST_NAME AS "Post title",
-        P.POST_BODY AS "Post content",
+
+        CONCAT(UPPER(LEFT(P.POST_NAME, 1)),
+                LOWER(RIGHT(P.POST_NAME, LENGTH(P.POST_NAME) -1)), '.') AS "Post title",
+
+        CONCAT(UPPER(LEFT(P.POST_BODY, 1)),
+                LOWER(RIGHT(P.POST_BODY, LENGTH(P.POST_BODY) -1)), '.') AS "Post content",
+
         P.ID_USER AS "User ID",
         BU.NICKNAME AS "User name",
         DATE(P.POST_DATE) AS "Post date",
