@@ -144,7 +144,7 @@ SELECT PC.* FROM POST_COMMENT PC;
 SELECT
     P.ID_POST AS "Post ID", P.POST_NAME AS "Post title", COUNT(PL.ID_POST) AS "Post likes"
 FROM POST P
-LEFT JOIN POST_LIKE PL on P.ID_POST = PL.ID_POST
+    LEFT JOIN POST_LIKE PL on P.ID_POST = PL.ID_POST
 GROUP BY P.ID_POST;
 
 -- View the amount of likes the user has giving in post
@@ -152,5 +152,35 @@ GROUP BY P.ID_POST;
 SELECT
     BU.ID_USER AS "User ID", BU.NICKNAME AS "Username", COUNT(PL.ID_USER) AS "Like in posts"
 FROM BLOG_USER BU
-LEFT JOIN POST_LIKE PL on BU.ID_USER = PL.ID_USER
+    LEFT JOIN POST_LIKE PL on BU.ID_USER = PL.ID_USER
 GROUP BY BU.ID_USER;
+
+-- Bring all the information about the posts, with likes and comments
+
+SELECT
+    P.ID_POST AS "Post ID",
+    P.POST_NAME AS "Post title",
+    P.POST_BODY AS "Post content",
+    P.ID_USER AS "User ID",
+    BU.NICKNAME AS "User name",
+    DATE(P.POST_DATE) AS "Post date",
+
+    IFNULL((SELECT BU.NICKNAME
+     FROM BLOG_USER BU
+     WHERE BU.ID_USER = PC.ID_USER), 'Not commented yet') AS "Commented by",
+
+    IFNULL(PC.COMMENT_TEXT, 'Not commented yet') AS "Comment body",
+    IFNULL(DATE(PC.COMMENT_DATE), 'Not commented yet') AS "Comment made on date",
+
+    CASE
+        WHEN COUNT(PL.ID_POST) <= 0 THEN 'Has no likes'
+        ELSE CAST(COUNT(PL.ID_POST) AS NCHAR)
+    END AS Likes
+FROM POST P
+    LEFT JOIN BLOG_USER BU on P.ID_USER = BU.ID_USER
+    LEFT JOIN POST_LIKE PL on P.ID_POST = PL.ID_POST
+    LEFT JOIN POST_COMMENT PC on P.ID_POST = PC.ID_POST
+GROUP BY P.ID_POST, P.POST_NAME, P.POST_BODY, P.ID_USER, BU.NICKNAME, P.POST_DATE, PC.ID_USER, PC.COMMENT_TEXT, PC.COMMENT_DATE
+ORDER BY COUNT(PL.ID_POST);
+
+
