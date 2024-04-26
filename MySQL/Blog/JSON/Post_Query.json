@@ -1,0 +1,41 @@
+[
+  {
+    "Post ID": 101,
+    "Post title": "First post.",
+    "Post content": "Hello everyone, salsa y picante.",
+    "User ID": 100,
+    "User name": "Paulito123",
+    "Posted on": "March 11, 2024",
+    "Commented by": "Paulito123",
+    "Comment body": "I know",
+    "Comment made on": "March 11, 2024",
+    "Total comments in this post": "2",
+    "Likes": "2"
+  },
+  {
+    "Post ID": 101,
+    "Post title": "First post.",
+    "Post content": "Hello everyone, salsa y picante.",
+    "User ID": 100,
+    "User name": "Paulito123",
+    "Posted on": "March 11, 2024",
+    "Commented by": "Juanito",
+    "Comment body": "Your post sucks",
+    "Comment made on": "March 11, 2024",
+    "Total comments in this post": "2",
+    "Likes": "2"
+  },
+  {
+    "Post ID": 100,
+    "Post title": "Second post.",
+    "Post content": "Hello everyone, salsa y picante.",
+    "User ID": 101,
+    "User name": "Juanito",
+    "Posted on": "March 11, 2024",
+    "Commented by": "Not commented yet",
+    "Comment body": "Not commented yet",
+    "Comment made on": "March 11, 2024",
+    "Total comments in this post": "Has no comments",
+    "Likes": "Has no likes"
+  }
+]

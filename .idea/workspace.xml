@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="102d2d4c-e506-40b8-b7c8-757f5efa6cf6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MySQL/Abogados/JSON/Clientes_Query.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MySQL/Blog/JSON/Post_Query.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BITNET_ERP/ws-rest-api/src/main/java/RestAPI/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BITNET_ERP/ws-rest-api/src/main/java/RestAPI/Controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9522dc88-8da0-4d62-ae10-c9eed6d7d9bb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9522dc88-8da0-4d62-ae10-c9eed6d7d9bb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MySQL/BLOG.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +43,7 @@
     "database.data.extractors.current.id": "JSON-Groovy.json.groovy",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/paulo/OneDrive/Documentos/Repositorios/SQL-APP/MySQL/Abogados/JSON",
+    "last_opened_file_path": "C:/Users/paulo/OneDrive/Documentos/Repositorios/SQL-APP/MySQL/Blog/JSON",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {

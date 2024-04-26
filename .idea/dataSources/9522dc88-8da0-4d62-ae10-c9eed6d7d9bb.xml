@@ -1065,24 +1065,24 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <collation id="287" parent="1" name="utf8mb4_mn_cyrl_0900_as_cs">
       <Charset>utf8mb4</Charset>
     </collation>
-    <schema id="288" parent="1" name="BLOG">
+    <schema id="288" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="289" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="290" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="291" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="292" parent="1" name="BLOG">
       <LastIntrospectionLocalTimestamp>2024-03-12.23:40:24</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="289" parent="1" name="abogados">
+    <schema id="293" parent="1" name="abogados">
       <LastIntrospectionLocalTimestamp>2024-04-25.22:16:45</LastIntrospectionLocalTimestamp>
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="290" parent="1" name="information_schema">
-      <CollationName>utf8mb3_general_ci</CollationName>
-    </schema>
-    <schema id="291" parent="1" name="mysql">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="292" parent="1" name="performance_schema">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="293" parent="1" name="sys">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <user id="294" parent="1" name="root">
@@ -1107,43 +1107,43 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="299" parent="288" name="BLOG_USER">
+    <table id="299" parent="292" name="BLOG_USER">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="300" parent="288" name="POST">
+    <table id="300" parent="292" name="POST">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="288" name="POST_COMMENT">
+    <table id="301" parent="292" name="POST_COMMENT">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="288" name="POST_LIKE">
+    <table id="302" parent="292" name="POST_LIKE">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <view id="303" parent="288" name="amount_likes_all_posts">
+    <view id="303" parent="292" name="amount_likes_all_posts">
       <Definer>root@%</Definer>
       <SourceTextLength>221</SourceTextLength>
     </view>
-    <view id="304" parent="288" name="posts_information_view">
+    <view id="304" parent="292" name="posts_information_view">
       <Definer>root@%</Definer>
       <SourceTextLength>1517</SourceTextLength>
     </view>
-    <table id="305" parent="289" name="Asunto">
+    <table id="305" parent="293" name="Asunto">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="306" parent="289" name="Cliente">
+    <table id="306" parent="293" name="Cliente">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="307" parent="289" name="Expediente">
+    <table id="307" parent="293" name="Expediente">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
-    <table id="308" parent="289" name="Procurador">
+    <table id="308" parent="293" name="Procurador">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb3_general_ci</CollationName>
     </table>
