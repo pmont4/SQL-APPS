@@ -7,7 +7,7 @@
     "Cantidad de expedientes finalizados": "1",
     "Datos de expedientes finalizados": "(Nombre: Josue - Numero de Asunto: 1001)",
     "Cantidad de expedientes en curso": "2",
-    "Datos de expedientes en curso": "(Nombre: Josue - Numero de Asunto: 1003); (Nombre: Josue - Numero de Asunto: 1002)"
+    "Datos de expedientes en curso": "(Nombre: Josue - Numero de Asunto: 1003) ; (Nombre: Josue - Numero de Asunto: 1002)"
   },
   {
     "Numero de procurador": 1000,
@@ -15,7 +15,7 @@
     "Documento de identificacion": "3423424",
     "Cantidad de expedientes adjuntos": "2",
     "Cantidad de expedientes finalizados": "2",
-    "Datos de expedientes finalizados": "(Nombre: Paulo - Numero de Asunto: 1004); (Nombre: Paulo - Numero de Asunto: 1000)",
+    "Datos de expedientes finalizados": "(Nombre: Paulo - Numero de Asunto: 1004) ; (Nombre: Paulo - Numero de Asunto: 1000)",
     "Cantidad de expedientes en curso": "No tiene expedientes en curso",
     "Datos de expedientes en curso": "No tiene expedientes en curso"
   },
