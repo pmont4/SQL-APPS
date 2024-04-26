@@ -67,15 +67,15 @@ CREATE TRIGGER Insertar_Expediente
 		INSERT INTO Expediente (IdAsunto, Fecha_Registro) VALUES (NEW.IdAsunto, NEW.Fecha_Inicio);
         
 INSERT INTO Asunto (IdProcurador, IdCliente, Caso, Fecha_Inicio, Fecha_Fin) VALUES
-					(1000, 1000, 'Demanda 1', DATE("2021-03-10"), DATE("2022-02-22"));
+					(1000, 1000, 'Demanda 1', DATE('2021-03-10'), DATE('2022-02-22'));
 INSERT INTO Asunto (IdProcurador, IdCliente, Caso, Fecha_Inicio, Fecha_Fin) VALUES
-					(1001, 1002, 'Denuncia 1', DATE("2022-04-11"), DATE("2022-05-29"));
+					(1001, 1002, 'Denuncia 1', DATE('2022-04-11'), DATE('2022-05-29'));
 INSERT INTO Asunto (IdProcurador, IdCliente, Caso, Fecha_Inicio, Fecha_Fin) VALUES
-					(1001, 1002, 'Denuncia 2', DATE("2023-04-11"), DATE("2024-04-26"));
+					(1001, 1002, 'Denuncia 2', DATE('2023-04-11'), DATE('2024-04-26'));
 INSERT INTO Asunto (IdProcurador, IdCliente, Caso, Fecha_Inicio, Fecha_Fin) VALUES
-					(1001, 1002, 'Denuncia 3', NOW(), DATE("2024-04-28"));
+					(1001, 1002, 'Denuncia 3', NOW(), DATE('2024-04-28'));
 INSERT INTO Asunto (IdProcurador, IdCliente, Caso, Fecha_Inicio, Fecha_Fin) VALUES
-					(1000, 1000, 'Demanda 2', DATE("2022-05-11"), DATE("2023-07-08"));
+					(1000, 1000, 'Demanda 2', DATE('2022-05-11'), DATE('2023-07-08'));
 
 -- Query general de todos los datos
 
@@ -88,13 +88,13 @@ SELECT
     
     CASE
 		WHEN ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)) <= 0 THEN
-			CONCAT(ABS(DATEDIFF(a.Fecha_Inicio, a.Fecha_Fin)), " dias")
+			CONCAT(ABS(DATEDIFF(a.Fecha_Inicio, a.Fecha_Fin)), ' dias')
 		WHEN ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)) = 1 THEN
-			CONCAT(ABS(DATEDIFF(a.Fecha_Inicio, a.Fecha_Fin)), " dias, ",
-				ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)), " año")
+			CONCAT(ABS(DATEDIFF(a.Fecha_Inicio, a.Fecha_Fin)), ' dias, ',
+				ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)), ' año')
 		WHEN ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)) > 1 THEN
-			CONCAT(ABS(DATEDIFF(a.Fecha_Inicio, a.Fecha_Fin)), " dias, ",
-				ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)), " años")
+			CONCAT(ABS(DATEDIFF(a.Fecha_Inicio, a.Fecha_Fin)), ' dias, ',
+				ABS(EXTRACT(YEAR FROM a.Fecha_Inicio) - EXTRACT(YEAR FROM a.Fecha_Fin)), ' años')
 		END AS "Tiempo estimado de duracion del caso",
             
     a.IdCliente AS "Numero de cliente",
@@ -118,28 +118,77 @@ SELECT
         'No tiene registros') AS "Cantidad de expedientes registrados",
 	
     IF (COUNT(a.IdCliente) > 0,
-		(SELECT COUNT(DATEDIFF(NOW(), a.Fecha_Fin)) 
+		(SELECT IF(COUNT(DATEDIFF(NOW(), a.Fecha_Fin)) > 0,
+		        COUNT(DATEDIFF(NOW(), a.Fecha_Fin)),
+		        'No hay expedientes finalizados')
         FROM Asunto a WHERE c.IdCliente = a.IdCliente AND DATEDIFF(NOW(), a.Fecha_Fin) > 0),
         'No tiene registros') AS "Canditad de expedientes finalizados",
         
 	IF (COUNT(a.IdCliente) > 0,
 		(SELECT IFNULL(GROUP_CONCAT(a.IdAsunto order by a.IdAsunto separator ', '), 'No hay expedientes finalizados') 
         FROM Asunto a WHERE c.IdCliente = a.IdCliente AND DATEDIFF(NOW(), a.Fecha_Fin) > 0),
-        'No tiene registros') AS "Identificador de los Expedientes finalizados",
+        'No hay expedientes finalizados') AS "Identificador de los Expedientes finalizados",
         
 	IF (COUNT(a.IdCliente) > 0,
-		(SELECT COUNT(DATEDIFF(NOW(), a.Fecha_Fin)) 
+		(SELECT IF(COUNT(DATEDIFF(NOW(), a.Fecha_Fin)) > 0,
+		        COUNT(DATEDIFF(NOW(), a.Fecha_Fin)),
+		        'No hay expedientes en curso')
         FROM Asunto a WHERE c.IdCliente = a.IdCliente AND DATEDIFF(NOW(), a.Fecha_Fin) < 0),
         'No tiene registros') AS "Canditad de expedientes en curso",
 	
     IF (COUNT(a.IdCliente) > 0,
 		(SELECT IFNULL(GROUP_CONCAT(a.IdAsunto order by a.IdAsunto separator ', '), 'No hay expedientes en curso') 
         FROM Asunto a WHERE c.IdCliente = a.IdCliente AND DATEDIFF(NOW(), a.Fecha_Fin) < 0),
-        'No tiene registros') AS "Identificador de los Expedientes en curso"
+        'No hay expedientes en curso') AS "Identificador de los Expedientes en curso"
 FROM Cliente c
 	LEFT JOIN Asunto a ON c.IdCliente = a.IdCliente
     GROUP BY c.IdCliente
 ORDER BY COUNT(a.IdCliente) DESC;
+
+-- Query de datos de la tabla procuradores
+
+SELECT
+	p.IdProcurador AS "Numero de procurador",
+    p.Nombre AS "Nombre del procurador",
+    p.DPI AS "Documento de identificacion",
+    
+    IF (COUNT(a.IdProcurador) > 0,
+		COUNT(a.IdProcurador),
+        'No tiene expedientes adjuntos') AS 'Cantidad de expedientes adjuntos',
+
+    IF(COUNT(a.IdProcurador) > 0,
+       (SELECT IF(COUNT(DATEDIFF(NOW(), a.Fecha_Fin)) > 0,
+               COUNT(DATEDIFF(NOW(), a.Fecha_Fin)),
+               'No tiene expedientes finalizados')
+        FROM Asunto a WHERE p.IdProcurador = a.IdProcurador AND DATEDIFF(NOW(), a.Fecha_Fin) > 0),
+        'No tiene registros'
+    ) AS 'Cantidad de expedientes finalizados',
+
+    IF(COUNT(a.IdProcurador) > 0,
+        (SELECT IFNULL(GROUP_CONCAT(CONCAT('(Nombre: ', c.Nombre, ' - Numero de Asunto: ', a.IdAsunto, ')') ORDER BY a.IdCliente SEPARATOR '; '), 'No tiene expedientes finalizados')
+         FROM Asunto a
+            LEFT JOIN Cliente c on a.IdCliente = c.IdCliente
+         WHERE a.IdProcurador = p.IdProcurador AND DATEDIFF(NOW(), a.Fecha_Fin) > 0),
+        'No tiene registros') AS 'Datos de expedientes finalizados',
+
+    IF(COUNT(a.IdProcurador) > 0,
+       (SELECT IF(COUNT(DATEDIFF(NOW(), a.Fecha_Fin)) > 0,
+               COUNT(DATEDIFF(NOW(), a.Fecha_Fin)),
+               'No tiene expedientes en curso')
+        FROM Asunto a WHERE p.IdProcurador = a.IdProcurador AND DATEDIFF(NOW(), a.Fecha_Fin) < 0),
+        'No tiene registros'
+    ) AS 'Cantidad de expedientes en curso',
+
+    IF(COUNT(a.IdProcurador) > 0,
+        (SELECT IFNULL(GROUP_CONCAT(CONCAT('(Nombre: ', c.Nombre, ' - Numero de Asunto: ', a.IdAsunto, ')') ORDER BY a.IdCliente SEPARATOR '; '), 'No tiene expedientes en curso')
+         FROM Asunto a
+            LEFT JOIN Cliente c on a.IdCliente = c.IdCliente
+         WHERE a.IdProcurador = p.IdProcurador AND DATEDIFF(NOW(), a.Fecha_Fin) < 0),
+        'No tiene registros') AS 'Datos de expedientes en curso'
+FROM Procurador p
+	LEFT JOIN Asunto a ON p.IdProcurador = a.IdProcurador
+    GROUP BY p.IdProcurador
+ORDER BY COUNT(a.IdProcurador) DESC;
 
 
 
