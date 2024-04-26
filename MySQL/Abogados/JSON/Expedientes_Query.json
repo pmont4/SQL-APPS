@@ -1,0 +1,62 @@
+[
+  {
+    "Numero de expediente": 1000,
+    "Numero de asunto": 1000,
+    "Caso": "Demanda 1",
+    "Fecha de registro": "2021-03-10",
+    "Fecha de finalizacion": "2022-02-22",
+    "Tiempo estimado de duracion del caso": "349 dias, 1 año",
+    "Numero de cliente": 1000,
+    "Nombre del cliente": "Paulo",
+    "Numero de procurador": 1000,
+    "Nombre del procurador": "Juan"
+  },
+  {
+    "Numero de expediente": 1001,
+    "Numero de asunto": 1001,
+    "Caso": "Denuncia 1",
+    "Fecha de registro": "2022-04-11",
+    "Fecha de finalizacion": "2022-05-29",
+    "Tiempo estimado de duracion del caso": "48 dias",
+    "Numero de cliente": 1002,
+    "Nombre del cliente": "Josue",
+    "Numero de procurador": 1001,
+    "Nombre del procurador": "Maria"
+  },
+  {
+    "Numero de expediente": 1002,
+    "Numero de asunto": 1002,
+    "Caso": "Denuncia 2",
+    "Fecha de registro": "2023-04-11",
+    "Fecha de finalizacion": "2024-04-26",
+    "Tiempo estimado de duracion del caso": "381 dias, 1 año",
+    "Numero de cliente": 1002,
+    "Nombre del cliente": "Josue",
+    "Numero de procurador": 1001,
+    "Nombre del procurador": "Maria"
+  },
+  {
+    "Numero de expediente": 1003,
+    "Numero de asunto": 1003,
+    "Caso": "Denuncia 3",
+    "Fecha de registro": "2024-04-25",
+    "Fecha de finalizacion": "2024-04-28",
+    "Tiempo estimado de duracion del caso": "3 dias",
+    "Numero de cliente": 1002,
+    "Nombre del cliente": "Josue",
+    "Numero de procurador": 1001,
+    "Nombre del procurador": "Maria"
+  },
+  {
+    "Numero de expediente": 1004,
+    "Numero de asunto": 1004,
+    "Caso": "Demanda 2",
+    "Fecha de registro": "2022-05-11",
+    "Fecha de finalizacion": "2023-07-08",
+    "Tiempo estimado de duracion del caso": "423 dias, 1 año",
+    "Numero de cliente": 1000,
+    "Nombre del cliente": "Paulo",
+    "Numero de procurador": 1000,
+    "Nombre del procurador": "Juan"
+  }
+]
