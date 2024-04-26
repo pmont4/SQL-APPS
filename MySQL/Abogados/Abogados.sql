@@ -165,7 +165,7 @@ SELECT
     ) AS 'Cantidad de expedientes finalizados',
 
     IF(COUNT(a.IdProcurador) > 0,
-        (SELECT IFNULL(GROUP_CONCAT(CONCAT('(Nombre: ', c.Nombre, ' - Numero de Asunto: ', a.IdAsunto, ')') ORDER BY a.IdCliente SEPARATOR '; '), 'No tiene expedientes finalizados')
+        (SELECT IFNULL(GROUP_CONCAT(CONCAT('(Nombre: ', c.Nombre, ' - Numero de Asunto: ', a.IdAsunto, ')') ORDER BY a.IdCliente SEPARATOR ' ; '), 'No tiene expedientes finalizados')
          FROM Asunto a
             LEFT JOIN Cliente c on a.IdCliente = c.IdCliente
          WHERE a.IdProcurador = p.IdProcurador AND DATEDIFF(NOW(), a.Fecha_Fin) > 0),
@@ -180,7 +180,7 @@ SELECT
     ) AS 'Cantidad de expedientes en curso',
 
     IF(COUNT(a.IdProcurador) > 0,
-        (SELECT IFNULL(GROUP_CONCAT(CONCAT('(Nombre: ', c.Nombre, ' - Numero de Asunto: ', a.IdAsunto, ')') ORDER BY a.IdCliente SEPARATOR '; '), 'No tiene expedientes en curso')
+        (SELECT IFNULL(GROUP_CONCAT(CONCAT('(Nombre: ', c.Nombre, ' - Numero de Asunto: ', a.IdAsunto, ')') ORDER BY a.IdCliente SEPARATOR ' ; '), 'No tiene expedientes en curso')
          FROM Asunto a
             LEFT JOIN Cliente c on a.IdCliente = c.IdCliente
          WHERE a.IdProcurador = p.IdProcurador AND DATEDIFF(NOW(), a.Fecha_Fin) < 0),
