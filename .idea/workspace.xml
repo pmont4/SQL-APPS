@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="102d2d4c-e506-40b8-b7c8-757f5efa6cf6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/MySQL/Abogados/JSON/Clientes_Query.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BITNET_ERP/ws-rest-api/src/main/java/RestAPI/Controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BITNET_ERP/ws-rest-api/src/main/java/RestAPI/Controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/9522dc88-8da0-4d62-ae10-c9eed6d7d9bb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/9522dc88-8da0-4d62-ae10-c9eed6d7d9bb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MySQL/Abogados.sql" beforeDir="false" afterPath="$PROJECT_DIR$/MySQL/Abogados.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,12 +20,16 @@
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2dZ9ZkWcWDQO2LveNNrAdOTnyvy" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenDatabaseViewOnStart": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -39,7 +39,7 @@
     "database.data.extractors.current.id": "JSON-Groovy.json.groovy",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/paulo/OneDrive/Documentos/Repositorios/BITNET_ERP/Database-Scripts",
+    "last_opened_file_path": "C:/Users/paulo/OneDrive/Documentos/Repositorios/SQL-APP/MySQL/Abogados/JSON",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   },
   "keyToStringList": {
@@ -49,4 +49,7 @@
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
 </project>

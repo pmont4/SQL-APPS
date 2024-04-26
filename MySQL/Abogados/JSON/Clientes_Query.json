@@ -1,0 +1,42 @@
+[
+  {
+    "Numero de cliente": 1002,
+    "Nombre del cliente": "Josue",
+    "Documento de identificacion": "345534535",
+    "Cantidad de expedientes registrados": "3",
+    "Canditad de expedientes finalizados": "1",
+    "Identificador de los Expedientes finalizados": "1001",
+    "Canditad de expedientes en curso": "2",
+    "Identificador de los Expedientes en curso": "1002, 1003"
+  },
+  {
+    "Numero de cliente": 1000,
+    "Nombre del cliente": "Paulo",
+    "Documento de identificacion": "301513015",
+    "Cantidad de expedientes registrados": "2",
+    "Canditad de expedientes finalizados": "2",
+    "Identificador de los Expedientes finalizados": "1000, 1004",
+    "Canditad de expedientes en curso": "No hay expedientes en curso",
+    "Identificador de los Expedientes en curso": "No hay expedientes en curso"
+  },
+  {
+    "Numero de cliente": 1001,
+    "Nombre del cliente": "Oscar",
+    "Documento de identificacion": "432342552",
+    "Cantidad de expedientes registrados": "No tiene registros",
+    "Canditad de expedientes finalizados": "No tiene registros",
+    "Identificador de los Expedientes finalizados": "No hay expedientes finalizados",
+    "Canditad de expedientes en curso": "No tiene registros",
+    "Identificador de los Expedientes en curso": "No hay expedientes en curso"
+  },
+  {
+    "Numero de cliente": 1003,
+    "Nombre del cliente": "Marcos",
+    "Documento de identificacion": "435345345",
+    "Cantidad de expedientes registrados": "No tiene registros",
+    "Canditad de expedientes finalizados": "No tiene registros",
+    "Identificador de los Expedientes finalizados": "No hay expedientes finalizados",
+    "Canditad de expedientes en curso": "No tiene registros",
+    "Identificador de los Expedientes en curso": "No hay expedientes en curso"
+  }
+]
